@@ -13,5 +13,5 @@ centos                    running (virtualbox)
 
 ## Current Latest Version 
 - Debian 10.0(Buster)
-- Ubuntu 18.04
+- Ubuntu 18.04(Xenial Xerus)
 - Centos 7.6
