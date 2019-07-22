@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
   config.vm.define :debian do |debian|
     debian.vm.box = "bento/debian-10.0"
     debian.vm.box_version = "201907.07.0"
-    debian.vm.hostname= "bullseye"
+    debian.vm.hostname= "buster"
   end
   
   config.vm.define :ubuntu do |ubuntu|
