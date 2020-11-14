@@ -18,12 +18,14 @@ centos71                  running (virtualbox)
 - Ubuntu 20.04(Focal Fossa)
 - Centos 8.2.2004
 
-書籍 original version
+Python 2系
+
+### 書籍 original version
 - Debian 8.1(Jessie)
 - Ubuntu 14.04(Trusty)
 - Centos 7.1
 
-Python 3.4.2
+Python 3.9.0
 
 ### how to check version
 
