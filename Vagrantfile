@@ -18,8 +18,13 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.hostname= "trusty"
   end
 
+  config.vm.define :centos8stream do |centos|
+    centos.vm.box = "centos/stream8"
+    centos.vm.hostname = "centos"
+  end
+  
   config.vm.define :centos8 do |centos|
-    centos.vm.box = "bento/centos-8.2"
+    centos.vm.box = "centos/8"
     centos.vm.hostname = "centos"
   end
   
