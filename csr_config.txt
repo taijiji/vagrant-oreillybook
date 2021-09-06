@@ -1,0 +1,28 @@
+en
+conf t
+hostname csr
+ip domain-name lab.local
+!
+crypto key generate rsa modulus 2048
+ip ssh version 2
+!
+aaa new-model
+!
+aaa authentication login default local
+aaa authorization exec default local
+!
+username vagrant privilege 15 secret vagrant
+username ntc privilege 15 secret ntc123
+!
+interface GigabitEthernet1
+ description vagrant-management
+ ip address dhcp
+ no shutdown
+!
+interface GigabitEthernet2
+  desc Host Only Network
+  no shut
+  ip address 192.168.99.11 255.255.255.0
+
+
+end

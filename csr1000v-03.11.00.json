@@ -1,0 +1,15 @@
+{
+  "name": "cisco/csr1000v",
+  "description": "Cisco CSR1000v",
+  "versions": [
+    {
+      "version": "03.11.00",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "/Users/taiji/work/vagrant-oreillybook/package.box"
+        }
+      ]
+    }
+  ]
+}

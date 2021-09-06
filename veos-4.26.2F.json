@@ -1,0 +1,15 @@
+{
+  "name": "arista/veos",
+  "description": "Arista vEOS",
+  "versions": [
+    {
+      "version": "04.26.2F",
+      "providers": [
+        {
+          "name": "virtualbox",
+          "url": "/Users/taiji/work/vagrant-oreillybook/package_eos.box"
+        }
+      ]
+    }
+  ]
+}

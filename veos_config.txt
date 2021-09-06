@@ -1,0 +1,20 @@
+ztp cancel
+
+hostname eos
+username vagrant role network-admin secret 0  vagrant
+username vagrant privilege 15 role network-admin secret vagrant
+
+interface Ethernet1
+   no switchport
+   ip address 192.168.99.12/24
+
+interface Management1
+  ip address dhcp
+  no shutdown
+  exit
+
+management api http-commands
+  no shutdown
+  exit
+
+ip routing
