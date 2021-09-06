@@ -7,7 +7,7 @@
       "providers": [
         {
           "name": "virtualbox",
-          "url": "/Users/taiji/work/vagrant-oreillybook/package_eos.box"
+          "url": "/Users/taiji/work/vagrant-oreillybook/os/package_eos.box"
         }
       ]
     }

@@ -7,7 +7,7 @@
       "providers": [
         {
           "name": "virtualbox",
-          "url": "/Users/taiji/work/vagrant-oreillybook/package.box"
+          "url": "/Users/taiji/work/vagrant-oreillybook/os/package_csr.box"
         }
       ]
     }
