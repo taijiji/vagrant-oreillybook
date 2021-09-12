@@ -13,9 +13,9 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.hostname= "focal"
     # enp0s3 = dhcp = vagrant ssh target
     # enp0s8
-    ubuntu.vm.network "private_network", virtualbox__intnet: "link_1", ip: "192.168.99.10"
+    ubuntu.vm.network "private_network", virtualbox__intnet: "link_1", ip: "192.168.99.10",netmask: "255.255.255.0"
     # enp0s9
-    ubuntu.vm.network "private_network", virtualbox__intnet: "link_2", ip: "192.168.100.10"
+    ubuntu.vm.network "private_network", virtualbox__intnet: "link_2", ip: "192.168.100.10",netmask: "255.255.255.0"
 
     #ubuntu.vm.provider "virtualbox" do |vb|
     #  vb.memory = "2048" 
@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
     csr.ssh.insert_key = false
     # GigabitEthernet1 = dhcp = vagrant ssh target
     # GigabitEthernet2
-    csr.vm.network "private_network", virtualbox__intnet: "link_1", ip: "192.168.99.11"
+    csr.vm.network "private_network", virtualbox__intnet: "link_1", ip: "192.168.99.11",netmask: "255.255.255.0"
   end
 
   config.vm.define :eos do |eos|
@@ -61,8 +61,8 @@ Vagrant.configure("2") do |config|
     # Create Ethernet1
     #eos.vm.network "private_network", virtualbox__intnet: true,
     #  ip: "192.168.99.12", auto_config: false
-    eos.vm.network "private_network", virtualbox__intnet: "link_1", ip: "192.168.99.12"
-    eos.vm.network "private_network", virtualbox__intnet: "link_2", ip: "192.168.100.12"
+    eos.vm.network "private_network", virtualbox__intnet: "link_1", ip: "192.168.99.12",netmask: "255.255.255.0"
+    eos.vm.network "private_network", virtualbox__intnet: "link_2", ip: "192.168.100.12",netmask: "255.255.255.0"
     #eos.vm.network "private_network", ip: "192.168.99.12"
     
     #eos.vm.provider :virtualbox do |vb|
@@ -73,6 +73,16 @@ Vagrant.configure("2") do |config|
       #  '--intnet2', 'vEOS-intnet1']
       #vb.gui = true
     #end
+  end
+
+  config.vm.define :srx do |srx|
+    srx.vm.box = "juniper/ffp-12.1X47-D15.4-packetmode"
+    srx.vm.network "private_network", virtualbox__intnet: "link_1", ip: "192.168.99.13",netmask: "255.255.255.0"
+  end
+
+  config.vm.define :st2 do |st2|
+    st2.vm.box = "stackstorm/st2"
+    st2.vm.network "private_network", virtualbox__intnet: "link_1", ip: "192.168.99.9",netmask: "255.255.255.0"
   end
 
 end
