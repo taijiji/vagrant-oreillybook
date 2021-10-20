@@ -1,0 +1,26 @@
+root@vsrx01> show configuration | display set
+set version 12.1X47-D15.4
+set system host-name vsrx01
+set system root-authentication encrypted-password "$1$nq.N1UsY$JxA/ESAj3KuXseXE597gg0"
+set system root-authentication ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC579oScQJNo/KYjJujxpuQT3Lid0k2naf5A23n5oc6Ku959dsvzRWDLNcIzPgoTE0iumJLmGVB7CBUjl6+bKyY6Rg5QJaaoIq7o5oPmFnV4P0d8zyVMIOHp4FRd4vIUNzBGTOAfBCKcGbToXFoTgdRiV/6ZQnTJHUcCCtuir5r+LXE+F7FwDU+Cph0K5gnAGlvJkI26tgXcuNB8+a8FJJwqxDAX/liAWUbX8J6q+NzTrWep7F6cn7ZhAO186XsFSc5yiB2s4MPTjbPr2PkFX8MO+I4xI2TSxvavT4FFy3YtkeePlKCreswJhAcdH5cGD/MuLpxGmX3wPPBP8s1EFgd vagrant"
+set system login user ntc uid 2001
+set system login user ntc class super-user
+set system login user ntc authentication encrypted-password "$1$4A0ye2IM$jNqlYqoTTSNnlFtxy39200"
+set system login user vagrant uid 2000
+set system login user vagrant class super-user
+set system login user vagrant authentication ssh-rsa "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key"
+set system services ssh root-login allow
+set system services netconf ssh
+set system services web-management http interface ge-0/0/0.0
+set system syslog user * any emergency
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set interfaces ge-0/0/0 unit 0 family inet dhcp
+set interfaces ge-0/0/1 unit 0 family inet address 192.168.99.13/24
+set protocols lldp interface all
+set security forwarding-options family inet6 mode packet-based
+set security forwarding-options family mpls mode packet-based
+set security zones security-zone trust interfaces ge-0/0/1.0 host-inbound-traffic system-services all
+set security zones security-zone Internal host-inbound-traffic system-services all

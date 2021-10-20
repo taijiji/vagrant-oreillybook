@@ -2,6 +2,7 @@ ztp cancel
 
 hostname eos
 username vagrant privilege 15 role network-admin secret vagrant
+username ntc privilege 15 role network-admin secret ntc123
 
 interface Ethernet1
    no switchport
